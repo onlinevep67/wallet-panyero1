@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "638191903452",
+    "firebase_url": "https://masterdevelop-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "masterdevelop",
+    "storage_bucket": "masterdevelop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638191903452:android:29639b703af0e6c3630a19",
+        "android_client_info": {
+          "package_name": "com.mypanyerowallet.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638191903452-utq7502rujalk8uv73468glig24j1svr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_3BT0XJ7EM3vWYcyZg8BNO7WmXVKIeLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108607720843004535709",
+              "client_type": 3
+            },
+            {
+              "client_id": "638191903452-fsbpbi0am3fhmqa4fu35vt4emsuks0qv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mypanyerowallet.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
