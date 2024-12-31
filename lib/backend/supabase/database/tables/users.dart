@@ -14,21 +14,42 @@ class UsersRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => UsersTable();
 
-  int get userId => getField<int>('user_id')!;
-  set userId(int value) => setField<int>('user_id', value);
+  String? get email => getField<String>('email');
+  set email(String? value) => setField<String>('email', value);
 
-  String get username => getField<String>('username')!;
-  set username(String value) => setField<String>('username', value);
+  String? get displayName => getField<String>('display_name');
+  set displayName(String? value) => setField<String>('display_name', value);
 
-  String get email => getField<String>('email')!;
-  set email(String value) => setField<String>('email', value);
+  String? get photoUrl => getField<String>('photo_url');
+  set photoUrl(String? value) => setField<String>('photo_url', value);
 
-  String get passwordHash => getField<String>('password_hash')!;
-  set passwordHash(String value) => setField<String>('password_hash', value);
+  String get uid => getField<String>('uid')!;
+  set uid(String value) => setField<String>('uid', value);
 
-  DateTime? get createdAt => getField<DateTime>('created_at');
-  set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
+  DateTime? get createdTime => getField<DateTime>('created_time');
+  set createdTime(DateTime? value) => setField<DateTime>('created_time', value);
 
-  DateTime? get updatedAt => getField<DateTime>('updated_at');
-  set updatedAt(DateTime? value) => setField<DateTime>('updated_at', value);
+  String? get phoneNumber => getField<String>('phone_number');
+  set phoneNumber(String? value) => setField<String>('phone_number', value);
+
+  int? get walletbalance => getField<int>('walletbalance');
+  set walletbalance(int? value) => setField<int>('walletbalance', value);
+
+  int? get tokenbalance => getField<int>('tokenbalance');
+  set tokenbalance(int? value) => setField<int>('tokenbalance', value);
+
+  String? get usertype => getField<String>('usertype');
+  set usertype(String? value) => setField<String>('usertype', value);
+
+  String? get status => getField<String>('status');
+  set status(String? value) => setField<String>('status', value);
+
+  String? get qrcodeimage => getField<String>('qrcodeimage');
+  set qrcodeimage(String? value) => setField<String>('qrcodeimage', value);
+
+  String? get sponsorphone => getField<String>('sponsorphone');
+  set sponsorphone(String? value) => setField<String>('sponsorphone', value);
+
+  int? get notification => getField<int>('notification');
+  set notification(int? value) => setField<int>('notification', value);
 }

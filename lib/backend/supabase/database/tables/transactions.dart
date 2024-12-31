@@ -14,19 +14,21 @@ class TransactionsRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => TransactionsTable();
 
-  int get transactionId => getField<int>('transaction_id')!;
-  set transactionId(int value) => setField<int>('transaction_id', value);
+  String get id => getField<String>('id')!;
+  set id(String value) => setField<String>('id', value);
 
-  int get senderId => getField<int>('sender_id')!;
-  set senderId(int value) => setField<int>('sender_id', value);
+  String? get walletId => getField<String>('wallet_id');
+  set walletId(String? value) => setField<String>('wallet_id', value);
 
-  int get receiverId => getField<int>('receiver_id')!;
-  set receiverId(int value) => setField<int>('receiver_id', value);
+  String? get type => getField<String>('type');
+  set type(String? value) => setField<String>('type', value);
 
   double get amount => getField<double>('amount')!;
   set amount(double value) => setField<double>('amount', value);
 
-  DateTime? get transactionDate => getField<DateTime>('transaction_date');
-  set transactionDate(DateTime? value) =>
-      setField<DateTime>('transaction_date', value);
+  String? get referenceId => getField<String>('reference_id');
+  set referenceId(String? value) => setField<String>('reference_id', value);
+
+  DateTime? get createdAt => getField<DateTime>('created_at');
+  set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
 }

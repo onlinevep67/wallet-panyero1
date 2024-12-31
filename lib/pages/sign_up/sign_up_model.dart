@@ -9,11 +9,6 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
-  // State field(s) for sponsor widget.
-  FocusNode? sponsorFocusNode;
-  TextEditingController? sponsorTextController;
-  late bool sponsorVisibility;
-  String? Function(BuildContext, String?)? sponsorTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -28,7 +23,6 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   @override
   void initState(BuildContext context) {
-    sponsorVisibility = false;
     passwordVisibility = false;
     confirmpasswordVisibility = false;
   }
@@ -37,9 +31,6 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   void dispose() {
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
-
-    sponsorFocusNode?.dispose();
-    sponsorTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

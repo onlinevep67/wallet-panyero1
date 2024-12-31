@@ -154,20 +154,18 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(2.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => ClipRRect(
-                                borderRadius: BorderRadius.circular(40.0),
-                                child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
-                                  imageUrl: valueOrDefault<String>(
-                                    currentUserPhoto,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/onboarding-flow-6tzaqf/assets/zp81llne12pt/addAvatarImage@2x.png',
-                                  ),
-                                  width: 60.0,
-                                  height: 60.0,
-                                  fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(40.0),
+                              child: CachedNetworkImage(
+                                fadeInDuration: const Duration(milliseconds: 500),
+                                fadeOutDuration: const Duration(milliseconds: 500),
+                                imageUrl: valueOrDefault<String>(
+                                  currentUserPhoto,
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/onboarding-flow-6tzaqf/assets/zp81llne12pt/addAvatarImage@2x.png',
                                 ),
+                                width: 60.0,
+                                height: 60.0,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
@@ -180,24 +178,22 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  valueOrDefault<String>(
-                                    currentUserDisplayName,
-                                    'Ralph Smith',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
-                                      ),
+                              Text(
+                                valueOrDefault<String>(
+                                  currentUserDisplayName,
+                                  'Ralph Smith',
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily),
+                                    ),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(

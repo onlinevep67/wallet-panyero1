@@ -5,23 +5,32 @@ import 'package:flutter/material.dart';
 class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl1 = '';
 
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameTextController;
   String? Function(BuildContext, String?)? yourNameTextControllerValidator;
+  // State field(s) for yoursponsorPhone widget.
+  FocusNode? yoursponsorPhoneFocusNode;
+  TextEditingController? yoursponsorPhoneTextController;
+  String? Function(BuildContext, String?)?
+      yoursponsorPhoneTextControllerValidator;
   // State field(s) for yourPhone widget.
   FocusNode? yourPhoneFocusNode;
   TextEditingController? yourPhoneTextController;
   String? Function(BuildContext, String?)? yourPhoneTextControllerValidator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode;
-  TextEditingController? cityTextController;
-  String? Function(BuildContext, String?)? cityTextControllerValidator;
+  // State field(s) for address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressTextController;
+  String? Function(BuildContext, String?)? addressTextControllerValidator;
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
 
   @override
   void initState(BuildContext context) {}
@@ -31,10 +40,13 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
     yourNameFocusNode?.dispose();
     yourNameTextController?.dispose();
 
+    yoursponsorPhoneFocusNode?.dispose();
+    yoursponsorPhoneTextController?.dispose();
+
     yourPhoneFocusNode?.dispose();
     yourPhoneTextController?.dispose();
 
-    cityFocusNode?.dispose();
-    cityTextController?.dispose();
+    addressFocusNode?.dispose();
+    addressTextController?.dispose();
   }
 }

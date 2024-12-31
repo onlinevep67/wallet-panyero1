@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home_page_model.dart';
@@ -24,6 +25,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (currentPhoneNumber == '') {
+        context.pushNamed('createProfile');
+      } else {
+        return;
+      }
+    });
   }
 
   @override
@@ -83,12 +93,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderWidth: 1.0,
                         buttonSize: 50.0,
                         icon: Icon(
-                          Icons.arrow_back_rounded,
+                          Icons.power_settings_new_sharp,
                           color: FlutterFlowTheme.of(context).primaryText,
                           size: 30.0,
                         ),
                         onPressed: () async {
-                          context.pop();
+                          GoRouter.of(context).prepareAuthEvent();
+                          await authManager.signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          context.pushNamedAuth('signIn', context.mounted);
                         },
                       ),
                     ),
@@ -175,25 +189,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        AuthUserStreamWidget(
-                                          builder: (context) => Text(
-                                            'Hello $currentUserDisplayName,',
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily,
-                                                  fontSize: 22.0,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineSmallFamily),
-                                                ),
-                                          ),
+                                        Text(
+                                          '',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                fontSize: 22.0,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
                                         ),
                                         InkWell(
                                           splashColor: Colors.transparent,
@@ -229,36 +240,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              '₱ ${valueOrDefault<String>(
-                                                valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.balance,
-                                                        0)
-                                                    .toString(),
-                                                '0.00',
-                                              )}',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .displaySmallFamily,
-                                                        fontSize: 22.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .displaySmallFamily),
-                                                      ),
-                                            ),
+                                          Text(
+                                            '',
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily,
+                                                  fontSize: 22.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily),
+                                                ),
                                           ),
                                           Text(
                                             'Your available balance',
@@ -823,7 +823,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  4.0, 8.0, 4.0, 8.0),
+                                                  8.0, 8.0, 8.0, 8.0),
                                           child: Container(
                                             width: 45.0,
                                             height: 45.0,
@@ -834,12 +834,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
-                                            child: Icon(
-                                              Icons.arrow_back,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              size: 24.0,
+                                            child: Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Icon(
+                                                Icons.insert_chart,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                size: 24.0,
+                                              ),
                                             ),
                                           ),
                                         ),
