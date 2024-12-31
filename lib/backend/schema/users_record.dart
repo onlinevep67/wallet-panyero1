@@ -85,6 +85,16 @@ class UsersRecord extends FirestoreRecord {
   String get qrImage => _qrImage ?? '';
   bool hasQrImage() => _qrImage != null;
 
+  // "gov_id" field.
+  String? _govId;
+  String get govId => _govId ?? '';
+  bool hasGovId() => _govId != null;
+
+  // "id_type" field.
+  String? _idType;
+  String get idType => _idType ?? '';
+  bool hasIdType() => _idType != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -100,6 +110,8 @@ class UsersRecord extends FirestoreRecord {
     _balance = castToType<int>(snapshotData['balance']);
     _tokenBalance = castToType<int>(snapshotData['token_balance']);
     _qrImage = snapshotData['qr_image'] as String?;
+    _govId = snapshotData['gov_id'] as String?;
+    _idType = snapshotData['id_type'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -150,6 +162,8 @@ Map<String, dynamic> createUsersRecordData({
   int? balance,
   int? tokenBalance,
   String? qrImage,
+  String? govId,
+  String? idType,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -167,6 +181,8 @@ Map<String, dynamic> createUsersRecordData({
       'balance': balance,
       'token_balance': tokenBalance,
       'qr_image': qrImage,
+      'gov_id': govId,
+      'id_type': idType,
     }.withoutNulls,
   );
 
@@ -191,7 +207,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.userType == e2?.userType &&
         e1?.balance == e2?.balance &&
         e1?.tokenBalance == e2?.tokenBalance &&
-        e1?.qrImage == e2?.qrImage;
+        e1?.qrImage == e2?.qrImage &&
+        e1?.govId == e2?.govId &&
+        e1?.idType == e2?.idType;
   }
 
   @override
@@ -209,7 +227,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.userType,
         e?.balance,
         e?.tokenBalance,
-        e?.qrImage
+        e?.qrImage,
+        e?.govId,
+        e?.idType
       ]);
 
   @override

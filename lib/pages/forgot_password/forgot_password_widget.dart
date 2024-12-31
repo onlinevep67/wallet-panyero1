@@ -224,7 +224,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
                                     FlutterFlowTheme.of(context)
                                         .labelMediumFamily),
                               ),
-                          hintText: 'Enter your email to recieve a linke...',
+                          hintText: 'Enter your email to recieve a link...',
                           hintStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(

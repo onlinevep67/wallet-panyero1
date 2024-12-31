@@ -423,7 +423,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Spring Specials 2022',
+                              'Panyero Maritine Tools',
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -441,7 +441,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'Pay attention to our new athlesiure line, it is located in our main section and we have sales!',
+                                'Access real-time navigation, weather updates, and sea conditions. GPS navigation, radar displays, and safety checklists.',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -507,7 +507,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Puuuurfect Running Gear',
+                              'Maritime Academy',
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -525,7 +525,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'Pay attention to our new athlesiure line, it is located in our main section and we have sales!',
+                                'Boost your career with our review center and training modules.',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -591,7 +591,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'The right pair of shoes',
+                              'Seafarer Media Hub',
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -609,7 +609,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'The pursuit of speed continues with the Nike Quest 4 Premium. Take on the streets with higher foam heights and cushioned comfort that combine with a lightweight upper to offer secure support.',
+                                'Stay connected with curated maritime news, movies, music, and updates, created for life at sea.',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -690,7 +690,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 44.0),
                                 child: Image.network(
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/01-onboardingresponsive-rw53z4/assets/g2f9m0vwbnzx/mylogo.png',
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/01-onboardingresponsive-rw53z4/assets/01gs9jkxz772/panyero.gif',
                                   width: 200.0,
                                   height: 170.0,
                                   fit: BoxFit.fitWidth,
@@ -704,6 +704,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .headlineMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .background,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -723,7 +725,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleSmallFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                            .background,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
